@@ -1,0 +1,11 @@
+title: Modern Proverbs
+description: Old proverbs, corrected — the wisdom kept, the wrong word fixed.
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
+defaults:
+  - scope:
+      path: proverbs
+    values:
+      layout: proverb
+exclude: [README.md, LICENSE]

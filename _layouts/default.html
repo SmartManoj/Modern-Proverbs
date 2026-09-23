@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title and page.title != site.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ site.description }}">
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 720px; margin: 0 auto; padding: 3rem 1.25rem 5rem; color: #1a1a1a; background: #fafafa;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #e6e6e6; background: #111; } .card { background: #1b1b1b; } }
+  h1 { font-size: 2.2rem; margin: 0 0 .25rem; }
+  .tagline { color: #888; margin: 0 0 2.5rem; }
+  .card { background: #fff; border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1rem 0; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  footer { margin-top: 3rem; color: #888; font-size: .9rem; }
+  a { color: #2b6cb0; }
+  a.card { display: block; color: inherit; text-decoration: none; }
+  a.card:hover { box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+  .card h2, .proverb h1 { font-size: 1.25rem; font-weight: 700; margin: 0 0 .4rem; }
+  .card p { margin: 0 0 .6rem; }
+  .card p:last-child { margin: 0; opacity: .85; }
+  .card p:first-of-type { color: #999; text-decoration: line-through; font-size: .95rem; }
+  a.card p > strong:first-child { display: none; }
+  .proverb p:first-of-type strong { text-decoration: none; display: inline-block; }
+  .home { font-weight: 700; text-decoration: none; }
+</style>
+</head>
+<body>
+{{ content }}
+  <footer>
+    Add your own on <a href="https://github.com/SmartManoj/modern-proverbs">GitHub</a>.
+  </footer>
+</body>
+</html>

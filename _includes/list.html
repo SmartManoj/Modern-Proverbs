@@ -1,0 +1,6 @@
+{% assign proverbs = site.pages | where: "dir", "/proverbs/" | where_exp: "p", "p.name contains '.md'" | sort: "name" %}
+{% for p in proverbs %}
+  <a class="card" href="{{ p.url | relative_url }}">
+    {{ p.content | markdownify | replace: '<h1', '<h2' | replace: '</h1>', '</h2>' }}
+  </a>
+{% endfor %}

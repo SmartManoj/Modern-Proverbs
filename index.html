@@ -1,54 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Modern Proverbs</title>
-<meta name="description" content="Old proverbs, corrected — the wisdom kept, the wrong word fixed.">
-<style>
-  :root { color-scheme: light dark; }
-  body {
-    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    max-width: 720px; margin: 0 auto; padding: 3rem 1.25rem 5rem; color: #1a1a1a; background: #fafafa;
-  }
-  @media (prefers-color-scheme: dark) { body { color: #e6e6e6; background: #111; } .card { background: #1b1b1b; } }
-  h1 { font-size: 2.2rem; margin: 0 0 .25rem; }
-  .tagline { color: #888; margin: 0 0 2.5rem; }
-  .card { background: #fff; border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1rem 0; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
-  .modern { font-size: 1.25rem; font-weight: 700; margin: 0 0 .4rem; }
-  .orig { color: #999; text-decoration: line-through; margin: 0 0 .6rem; font-size: .95rem; }
-  .why { margin: 0; color: inherit; opacity: .85; }
-  footer { margin-top: 3rem; color: #888; font-size: .9rem; }
-  a { color: #2b6cb0; }
-</style>
-</head>
-<body>
-  <h1>Modern Proverbs</h1>
-  <p class="tagline">Old proverbs, corrected — the wisdom kept, the wrong word fixed.</p>
+---
+layout: default
+---
+  <h1>{{ site.title }}</h1>
+  <p class="tagline">{{ site.description }}</p>
 
-  <div id="list"><noscript>See the list in the <a href="https://github.com/SmartManoj/modern-proverbs/tree/main/proverbs">proverbs folder</a>.</noscript></div>
-
-  <footer>
-    Add your own on <a href="https://github.com/SmartManoj/modern-proverbs">GitHub</a>.
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
-  <script>
-    // Each proverb is a file in proverbs/; Pages can't list directories, so ask the GitHub API.
-    const field = (md, name) => (md.match(new RegExp(`^\\*\\*${name}:\\*\\* (.+)$`, 'm')) || [])[1] || '';
-    fetch('https://api.github.com/repos/SmartManoj/modern-proverbs/contents/proverbs')
-      .then(r => r.json())
-      .then(files => Promise.all(files.filter(f => f.name.endsWith('.md'))
-        .map(f => fetch('proverbs/' + f.name).then(r => r.text()))))
-      .then(docs => {
-        document.getElementById('list').innerHTML = docs.map(md => {
-          md = md.replace(/\r/g, '');
-          return `<div class="card">
-    <p class="modern">${marked.parseInline(md.match(/^# (.+)$/m)[1])}</p>
-    <p class="orig">${marked.parseInline(field(md, 'Original'))}</p>
-    <p class="why">${marked.parseInline(field(md, 'Why the change'))}</p>
-  </div>`;
-        }).join('');
-      });
-  </script>
-</body>
-</html>
+{% include list.html %}
