@@ -10,6 +10,7 @@ Inspired by [this thread](https://www.reddit.com/r/PetPeeves/comments/1sdhmsy/th
 |---|---|---|
 | **Fast and steady wins the race.** | Slow and steady wins the race. | Steadiness is the real virtue, not slowness. Between two equally consistent runners, the *faster* one wins — "slow" was never the point. |
 | **Succinctness is the soul of wit.** | Brevity is the soul of wit. | Brevity is just *short*; succinctness is *short and complete*. You can be brief and lose the point — wit needs the point to survive. |
+| **A leopard can change its spots.** (நாய் வாலை நிமிர்த்த முடியும்) | A leopard cannot change its spots. (நாய் வாலை நிமிர்த்த முடியாது) | The original cynically implies that core flaws and stubborn habits are permanent. With persistence and deliberate effort, even deeply rooted traits can be transformed. |
 
 ## Contributing
 
